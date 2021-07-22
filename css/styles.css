@@ -1,0 +1,382 @@
+@font-face {
+    font-family: 'digital-clock-font';
+    src: url('./fonts/DS-DIGI.TTF');
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.back-panel {
+    background-color: rgb(51, 51, 51);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-panel {
+    background: rgb(71, 71, 74);
+    background: linear-gradient(40deg, rgba(71, 71, 74, 1) 0%, rgba(84, 77, 77, 1) 53%, rgba(77, 74, 74, 1) 100%);
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    border: 1px solid;
+    border-radius: .3rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.digit-display {
+    border-radius: .3em;
+    border-color: black;
+    border-style: inset;
+    background-color: rgb(5, 5, 5);
+    width: 190px;
+    height: 65px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.digit-display>div:last-child {
+    margin-left: -15px;
+    margin-top: 20px;
+
+}
+
+.digit-display>div {
+    flex: 0 0 auto;
+    margin: 0 5px;
+    padding: 0 5px;
+
+}
+
+.control-buttons {
+    width: 65px;
+    height: 65px;
+}
+
+.control-buttons>div {
+    display: inline-flex;
+    border-radius: .1em;
+    border-color: black;
+    border-style: inset;
+    background-color: rgb(5, 5, 5);
+    padding: 2px;
+}
+
+.button-up,
+.button-dwn {
+    background-color: rgb(7, 7, 7);
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    padding-left: 2px;
+
+}
+
+
+button>img {
+    margin-right: 3px;
+}
+
+.pwr-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: darkturquoise;
+    display: inline-block;
+    margin-right: 6px;
+    box-shadow: inset 0px 1px 3px 0px #2a2b2b;
+}
+
+.button-pwr {
+    width: 58px;
+    height: 25px;
+    display: flex;
+}
+
+.buttonface {
+    box-shadow: inset 0px 1px 3px 0px #2a2b2b;
+    background: linear-gradient(to bottom, #2a2b2b 5%, #3b3b3b 100%);
+    background-color: #2a2b2b;
+    border-radius: 5px;
+    border: 1px solid #2a2b2b;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #0a0a0a;
+}
+
+.buttonface:hover {
+    background: linear-gradient(to bottom, #2a2b2b 5%, #3b3b3b 100%);
+    background-color: #3b3b3b;
+}
+
+.buttonface:active {
+    position: relative;
+    top: 1px;
+}
+
+.toggle-container {
+    width: 100px;
+    height: 25px;
+    flex-grow: 2;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 15px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(3, 3, 3);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background: radial-gradient(circle, rgba(71, 71, 74, 1) 0%, rgba(199, 199, 199, 1) 53%, rgba(77, 74, 74, 1) 100%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.toggle-slider {
+    background-color: rgb(3, 3, 3);
+}
+
+input:focus+.toggle-slider {
+    box-shadow: 0 0 1px rgb(3, 3, 3);
+    ;
+}
+
+input:checked+.toggle-slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.toggle-slider.round {
+    border-radius: 17px;
+}
+
+.toggle-slider.round:before {
+    border-radius: 50%;
+}
+
+
+.range-container {
+    width: 150px;
+}
+
+
+
+.digits {
+
+    font-family: digital-clock-font;
+    font-size: 3rem;
+    color: darkturquoise;
+}
+
+.units {
+
+    font-family: digital-clock-font;
+    font-size: 1rem;
+    color: darkturquoise;
+}
+
+.ruler {
+    position: relative;
+    width: 105%;
+    margin-left: 5px;
+    height: 14px;
+}
+
+.ruler .cm,
+.ruler .mm {
+    position: absolute;
+    border-left: 1px solid #FFF;
+    height: 14px;
+    width: 10%;
+}
+
+.ruler .cm:after {
+    position: absolute;
+    bottom: -15px;
+    font: 11px/1 sans-serif;
+}
+
+.ruler .mm {
+    height: 5px;
+}
+
+.ruler .mm:nth-of-type(5) {
+    height: 10px;
+}
+
+.ruler .cm:nth-of-type(1) {
+    left: 0%;
+}
+
+.ruler .cm:nth-of-type(1):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(2) {
+    left: 10%;
+}
+
+.ruler .cm:nth-of-type(2):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(3) {
+    left: 20%;
+}
+
+.ruler .cm:nth-of-type(3):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(4) {
+    left: 30%;
+}
+
+.ruler .cm:nth-of-type(4):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(5) {
+    left: 40%;
+}
+
+.ruler .cm:nth-of-type(5):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(6) {
+    left: 50%;
+}
+
+.ruler .cm:nth-of-type(6):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(7) {
+    left: 60%;
+}
+
+.ruler .cm:nth-of-type(7):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(8) {
+    left: 70%;
+}
+
+.ruler .cm:nth-of-type(8):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(9) {
+    left: 80%;
+}
+
+.ruler .cm:nth-of-type(9):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(10) {
+    left: 90%;
+}
+
+.ruler .cm:nth-of-type(10):after {
+    content: "";
+}
+
+.ruler .cm:nth-of-type(11) {
+    left: 100%;
+}
+
+.ruler .cm:nth-of-type(11):after {
+    content: "100";
+}
+
+.ruler .mm:nth-of-type(1) {
+    left: 10%;
+}
+
+.ruler .mm:nth-of-type(2) {
+    left: 20%;
+}
+
+.ruler .mm:nth-of-type(3) {
+    left: 30%;
+}
+
+.ruler .mm:nth-of-type(4) {
+    left: 40%;
+}
+
+.ruler .mm:nth-of-type(5) {
+    left: 50%;
+}
+
+.ruler .mm:nth-of-type(6) {
+    left: 60%;
+}
+
+.ruler .mm:nth-of-type(7) {
+    left: 70%;
+}
+
+.ruler .mm:nth-of-type(8) {
+    left: 80%;
+}
+
+.ruler .mm:nth-of-type(9) {
+    left: 90%;
+}
+
+.ruler .mm:nth-of-type(10) {
+    left: 100%;
+}
