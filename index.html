@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="scripts/scripts.js"  type="text/javascript" charset="utf-8" defer>
+    </script>
+    
     <title>Custom Countdown Timer</title>
 
 </head>
@@ -15,33 +18,27 @@
         <div class="back-panel">
             <div class="display-panel">
                 <div class="digit-display">
-                    <div><img src="./images/Clock_simple.svg" alt="" width="24" height="24"></div>
-                    <div id="timer-digits" class="digits">100</div>
-                    <div id="timer-units" class="units">MIN</div>
+                    <div><img src="./images/Clock_simple.svg" alt="" id="clock-image" class="clock-image-off" ></div>
+                    <div id="timer-digits" class="digits-off">00:00</div> 
+                    <div id="timer-units" class="units-off">MIN</div>
                 </div>
                 <div class="control-buttons">
                     <div>
                         <button type="button" class="button-up buttonface"><img src="./images/up.svg" alt="up"
-                                width="20"></button>
-                        <button type="button" class="button-dwn buttonface"><img src="./images/down.svg" alt="down"
+                                width="20" id="countup_btn"></button>
+                        <button type="button" id="countdwn_btn" class="button-dwn buttonface"><img src="./images/down.svg" alt="down"
                                 width="20"></button>
                     </div>
                     <div>
-                        <button type="button" class="button-pwr buttonface">
-                            <div class="pwr-circle"></div>PWR
-                        </button>
+                        <button type="button" id="pwr_btn" class="button-pwr buttonface" value="OFF">
+                            <div class="pwr-circle-off"></div>PWR
+                        </button> 
                     </div>
                 </div>
-
-                <div class="toggle-container">
-                    MIN <label class="toggle">
-                        <input type="checkbox">
-                        <span class="toggle-slider round"></span>
-                    </label> HRS
-                </div>
-                <div>
+              
+                <div class="slider_ruler_position">
                     <div class="range-container">
-                        <input type="range" min="0" max="200" step="1" value="100">
+                        <input type="range" min="0" max="100" step="1" value="50" id="slide_ranger">
                     </div>
                     <div class='ruler'>
                         <div class='cm'>
