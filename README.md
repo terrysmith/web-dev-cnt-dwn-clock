@@ -12,6 +12,9 @@ JS - Standard js with latest javascript methodologies
 - Use the INCR up arrow button to increase the timer count by one minute at a time.
 - USe the DECR dwn arrow button to decrease the timer count by one minute at a time.
 
+
+![Count Down Timer Mock](https://github.com/terrysmith/web-dev-cnt-dwn-clock/blob/main/timer-mockup/timermock.png)
+
 ## Getting Started
 
 You can branch this code line and work with it as you wish.
